@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:toold="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="driver"
+            type="com.benkhalifa.republicserviceschallenge.domain.Driver" />
+        <variable
+            name="driverClickListener"
+            type="com.benkhalifa.republicserviceschallenge.driverUI.driverlist.DriverClickListener" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/driver_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:onClick="@{() -> driverClickListener.onClick(driver)}">
+
+        <TextView
+            android:id="@+id/driver_id"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:padding="8dp"
+            android:text="@{driver.id}"
+            toold:text="ID"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/driver_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="6"
+            android:padding="8dp"
+            android:text="@{driver.name}"
+            toold:text="Name"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/driver_detail"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/arrow"
+            android:layout_weight="0"
+            android:singleLine="true"
+            android:padding="0dp"
+            android:layout_gravity="center_vertical"
+            android:contentDescription="@string/details" />
+
+    </LinearLayout>
+</layout>
